@@ -117,6 +117,12 @@ then
 else
 	installFromRepo "Python3" "python3"
 fi
+if alreadyInstalled "python3-pip"
+then
+	echo "[OK] Python3-Pip already installed."
+else
+	installFromRepo "Python3-Pip" "python3-pip"
+fi
 
 # CMake
 if alreadyInstalled "cmake"
