@@ -25,8 +25,32 @@
 #           ')
 #
 
+# Web Browsers
+category="Web Browsers"
+## Google Chrome
+tools_name+=("Google Chrome")
+tools_command_getStatus+=("dpkg -s google-chrome-stable")
+tools_command_install+=('
+    addRepo sublime-text "[arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" "https://dl.google.com/linux/linux_signing_key.pub" &&
+    sudo apt-get -y install google-chrome-stable
+    ')
+tools_command_postinstall+=("google-chrome")
+tools_category+=("$category")
+## Google Chromium
+tools_name+=("Google Chromium")
+tools_command_getStatus+=("dpkg -s chromium-browser")
+tools_command_install+=("sudo apt-get -y install chromium-browser")
+tools_command_postinstall+=("chromium-browser")
+tools_category+=("$category")
+## Firefox
+tools_name+=("Firefox")
+tools_command_getStatus+=("dpkg -s firefox")
+tools_command_install+=("sudo apt-get -y install firefox")
+tools_command_postinstall+=("")
+tools_category+=("$category")
+
 # Editors
-category="Editors"
+category="Source Code Editors"
 ## VS Code
 tools_name+=("VS Code")
 tools_command_getStatus+=("dpkg -s code")
@@ -72,7 +96,7 @@ tools_command_postinstall+=('
 ')
 tools_category+=("$category")
 
-# Programming Languages and Build Tools
+# Programming Languages, Frameworks, and Build Tools
 category="Programming Languages and Build Tools"
 ## Python2
 tools_name+=("Python2")
@@ -110,33 +134,6 @@ tools_command_getStatus+=("dpkg -s cmake")
 tools_command_install+=("sudo apt-get -y install cmake")
 tools_command_postinstall+=("")
 tools_category+=("$category")
-
-# Web Browsers
-category="Web Browsers"
-## Google Chrome
-tools_name+=("Google Chrome")
-tools_command_getStatus+=("dpkg -s google-chrome-stable")
-tools_command_install+=('
-    addRepo sublime-text "[arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" "https://dl.google.com/linux/linux_signing_key.pub" &&
-    sudo apt-get -y install google-chrome-stable
-    ')
-tools_command_postinstall+=("google-chrome")
-tools_category+=("$category")
-## Google Chromium
-tools_name+=("Google Chromium")
-tools_command_getStatus+=("dpkg -s chromium-browser")
-tools_command_install+=("sudo apt-get -y install chromium-browser")
-tools_command_postinstall+=("chromium-browser")
-tools_category+=("$category")
-## Firefox
-tools_name+=("Firefox")
-tools_command_getStatus+=("dpkg -s firefox")
-tools_command_install+=("sudo apt-get -y install firefox")
-tools_command_postinstall+=("")
-tools_category+=("$category")
-
-# Web Development
-category="Web Development"
 ## Django
 tools_name+=("Django")
 tools_command_getStatus+=("pip3 show django")
@@ -144,7 +141,7 @@ tools_command_install+=("sudo -H pip3 install --upgrade django")
 tools_command_postinstall+=("")
 tools_category+=("$category")
 
-# Testing
+# Testing Tools
 category="Testing Tools"
 ## Google Test Tools
 tools_name+=("Google Mock and Test Tools")
