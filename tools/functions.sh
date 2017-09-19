@@ -112,6 +112,8 @@ function displayInstallMenu()
     clear
     # Print the menu with the packages
     currentCategory=""
+    echo "---------------------------------------"
+    echo ""
     for i in ${!tools_name[@]}; do
         # Print category
         if [ "$currentCategory" != "${tools_category[$i]}" ];then

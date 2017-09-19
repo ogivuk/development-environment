@@ -79,6 +79,7 @@ do
 done
 
 # Perform the installation & post installation
+echo "---------------------------------------"
 echo "Preparing for installation:"
 init
 echo "Installation:"
@@ -95,3 +96,4 @@ for i in ${!tools_name[@]}; do
 done
 
 echo $finalMsg
+echo "---------------------------------------"

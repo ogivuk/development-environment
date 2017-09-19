@@ -92,7 +92,7 @@ tools_command_postinstall+=('
     git config --global user.name "$gitusername" &&
     git config --global user.email "$gitemail" &&
     echo "[Done] Configuring Git." &&
-    echo "[NOTE] Do not forget to copy your SSH keys to /home/$USER/.ssh/" &&
+    echo "[NOTE] Do not forget to copy your SSH keys to /home/$USER/.ssh/"
 ')
 tools_category+=("$category")
 
