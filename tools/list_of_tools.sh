@@ -31,7 +31,7 @@ category="Web Browsers"
 tools_name+=("Google Chrome")
 tools_command_getStatus+=("dpkg -s google-chrome-stable")
 tools_command_install+=('
-    addRepo sublime-text "[arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" "https://dl.google.com/linux/linux_signing_key.pub" &&
+    addRepo google-chrome "[arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" "https://dl.google.com/linux/linux_signing_key.pub" &&
     sudo apt-get -y install google-chrome-stable
     ')
 tools_command_postinstall+=("google-chrome")
