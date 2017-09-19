@@ -12,13 +12,13 @@ tools_command_postinstall=()
 category="User Profile"
 ## Background Image
 tools_name+=("Background Image: Night Lights")
-tools_command_getStatus+=("! gsettings get org.gnome.desktop.background picture-uri | grep "file:////usr/share/backgrounds/Night_lights_by_Alberto_Salvia_Novella.jpg" >/dev/null")
+tools_command_getStatus+=('gsettings get org.gnome.desktop.background picture-uri | grep "file:////usr/share/backgrounds/Night_lights_by_Alberto_Salvia_Novella.jpg" >/dev/null')
 tools_command_install+=("gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/Night_lights_by_Alberto_Salvia_Novella.jpg")
 tools_command_postinstall+=("")
 tools_category+=("$category")
 ## Multiple Workspaces
-tools_name+=("Multiple Workspaces")
-tools_command_getStatus+=("1")
+tools_name+=("Multiple Workspaces (System Settings -> Personal -> Appearance -> Behavior -> Enable Workspaces)")
+tools_command_getStatus+=("")
 #gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize [x]
 #gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize [y]
 tools_command_install+=('
