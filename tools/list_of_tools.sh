@@ -141,6 +141,15 @@ tools_command_install+=("sudo -H pip3 install --upgrade django")
 tools_command_postinstall+=("")
 tools_category+=("$category")
 
+# Database Tools
+category="Database Tools"
+## Google Chrome
+tools_name+=("SQLite Browser")
+tools_command_getStatus+=("dpkg -s sqlitebrowser")
+tools_command_install+=('sudo apt-get -y install sqlitebrowser')
+tools_command_postinstall+=("")
+tools_category+=("$category")
+
 # Testing Tools
 category="Testing Tools"
 ## Google Test Tools
