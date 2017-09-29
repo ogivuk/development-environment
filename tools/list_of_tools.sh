@@ -142,8 +142,14 @@ tools_command_postinstall+=("")
 tools_category+=("$category")
 
 # Database Tools
-category="Database Tools"
-## Google Chrome
+category="Databases and Database Tools"
+## PostgreSQL
+tools_name+=("PostgreSQL")
+tools_command_getStatus+=("dpkg -s postgresql postgresql-contrib")
+tools_command_install+=('sudo apt-get -y install postgresql postgresql-contrib')
+tools_command_postinstall+=("")
+tools_category+=("$category")
+## SQLite Browser
 tools_name+=("SQLite Browser")
 tools_command_getStatus+=("dpkg -s sqlitebrowser")
 tools_command_install+=('sudo apt-get -y install sqlitebrowser')
