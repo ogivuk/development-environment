@@ -147,6 +147,21 @@ tools_command_install+=("sudo -H pip3 install --upgrade django")
 tools_command_postinstall+=("")
 tools_category+=("$category")
 
+# Database Tools
+category="Databases and Database Tools"
+## PostgreSQL
+tools_name+=("PostgreSQL")
+tools_command_getStatus+=("dpkg -s postgresql postgresql-contrib")
+tools_command_install+=('sudo apt-get -y install postgresql postgresql-contrib')
+tools_command_postinstall+=("")
+tools_category+=("$category")
+## SQLite Browser
+tools_name+=("SQLite Browser")
+tools_command_getStatus+=("dpkg -s sqlitebrowser")
+tools_command_install+=('sudo apt-get -y install sqlitebrowser')
+tools_command_postinstall+=("")
+tools_category+=("$category")
+
 # Testing Tools
 category="Testing Tools"
 ## Google Test Tools
@@ -227,7 +242,7 @@ tools_command_postinstall+=("")
 tools_category+=("$category")
 ## Crypto++
 tools_name+=("Crypto++")
-tools_command_getStatus+=("dpkg -s openssl libcrypto++-dev")
-tools_command_install+=("sudo apt-get -y install openssl libcrypto++-dev")
+tools_command_getStatus+=("dpkg -s $(apt-cache pkgnames | grep -i libcrypto++)")
+tools_command_install+=("sudo apt-get -y install $(apt-cache pkgnames | grep -i libcrypto++)")
 tools_command_postinstall+=("")
 tools_category+=("$category")
