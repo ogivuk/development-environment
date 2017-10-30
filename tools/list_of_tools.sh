@@ -122,6 +122,12 @@ tools_command_getStatus+=("dpkg -s python3-pip")
 tools_command_install+=("sudo apt-get -y install python3-pip")
 tools_command_postinstall+=("pip3 install -q --upgrade pip")
 tools_category+=("$category")
+## C++ Boost
+tools_name+=("C++ Boost")
+tools_command_getStatus+=("dpkg -s libboost-all-dev")
+tools_command_install+=("sudo apt-get -y install libboost-all-dev")
+tools_command_postinstall+=("")
+tools_category+=("$category")
 ## G++
 tools_name+=("G++")
 tools_command_getStatus+=("dpkg -s g++")
