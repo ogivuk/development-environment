@@ -163,7 +163,7 @@ tools_command_postinstall+=("")
 tools_category+=("$category")
 
 # Testing Tools
-category="Testing Tools"
+category="Testing and CI Tools"
 ## Google Test Tools
 tools_name+=("Google Mock and Test Tools")
 tools_command_getStatus+=("dpkg -s google-mock")
@@ -213,6 +213,15 @@ tools_command_install+=('
     rm geckodriver-v0.19.0-linux64.tar.gz &&
     chmod +x geckodriver &&
     sudo mv -f geckodriver /usr/bin/geckodriver
+    ')
+tools_command_postinstall+=("")
+tools_category+=("$category")
+## Jenkins
+tools_name+=("Jenkins")
+tools_command_getStatus+=("dpkg -s jenkins")
+tools_command_install+=('
+    addRepo jenkins "http://pkg.jenkins.io/debian-stable binary/" "https://pkg.jenkins.io/debian/jenkins.io.key" &&
+    sudo apt-get -y install jenkins
     ')
 tools_command_postinstall+=("")
 tools_category+=("$category")
