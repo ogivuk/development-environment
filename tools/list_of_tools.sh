@@ -235,6 +235,15 @@ tools_command_install+=("sudo apt-get -y install google-perftools libgoogle-perf
 tools_command_postinstall+=("")
 tools_category+=("$category")
 
+# Documentation Tools
+category="Documentation Tools"
+## Doxygen
+tools_name+=("Doxygen")
+tools_command_getStatus+=("dpkg -s doxygen")
+tools_command_install+=("sudo apt-get -y install doxygen")
+tools_command_postinstall+=("")
+tools_category+=("$category")
+
 # Crypto
 category="Crypto Tools and Libraries"
 ## Sodium
